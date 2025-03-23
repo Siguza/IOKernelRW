@@ -24,6 +24,7 @@ $(TARGET).kext/Contents $(TARGET).kext/Contents/MacOS:
 
 install: all
 	sudo cp -R $(TARGET).kext /Library/Extensions/
+	sudo cp lib/iokernelrw.h /usr/local/include
 
 clean:
 	rm -rf $(TARGET).kext
