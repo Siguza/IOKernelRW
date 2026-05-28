@@ -8,6 +8,7 @@ class IOKernelRWUserClient : public IOUserClient
     OSDeclareFinalStructors(IOKernelRWUserClient);
 public:
     virtual bool initWithTask(task_t owningTask, void *securityID, uint32_t type) override;
+    virtual IOReturn clientClose(void) override;
     virtual IOReturn externalMethod(uint32_t selector, IOExternalMethodArguments *args, IOExternalMethodDispatch *dispatch, OSObject *target, void *reference) override;
 
 private:

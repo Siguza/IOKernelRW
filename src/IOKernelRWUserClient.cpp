@@ -26,6 +26,12 @@ bool IOKernelRWUserClient::initWithTask(task_t owningTask, void *securityID, uin
     return allow;
 }
 
+IOReturn IOKernelRWUserClient::clientClose(void)
+{
+    terminate();
+    return kIOReturnSuccess;
+}
+
 IOReturn IOKernelRWUserClient::externalMethod(uint32_t selector, IOExternalMethodArguments *args, IOExternalMethodDispatch *dispatch, OSObject *target, void *reference)
 {
     static const IOExternalMethodDispatch methods[] =
